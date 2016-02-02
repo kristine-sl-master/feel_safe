@@ -1,0 +1,10 @@
+.Header 
+{
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	background: map-get( $colors, 'background' ); 
+	padding: 20px; 
+	height: 100px;
+	border-bottom: 10px solid map-get( $colors, 'background-dark'); 
+}

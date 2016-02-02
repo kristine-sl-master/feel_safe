@@ -1,0 +1,36 @@
+{
+  "name": "feel_safe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kristine-sl/feel_safe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristine-sl/feel_safe/issues"
+  },
+  "homepage": "https://github.com/kristine-sl/feel_safe",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-animate": "^1.4.9",
+    "angular-route": "^1.4.9"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-jsvalidate": "^2.1.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-order": "^1.1.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.5.1"
+  }
+}

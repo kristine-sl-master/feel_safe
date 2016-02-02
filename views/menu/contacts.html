@@ -1,0 +1,15 @@
+<div class="Menu" ng-controller = 'ContactsCtrl as contacts' ng-show = 'contacts.visible'>
+
+	<div class="Contact-wrapper">
+		<div ng-repeat = "contact in contacts.contacts" class = 'Contact' >
+			<div class="Contact-name">{{ contact.name }}</div>
+			<div class="Contact-phone">{{ contact.phone }}</div>
+			<div class="Contant-delete icon-x"></div>
+		</div>
+	</div>
+	<div class="Contact-add">
+		<div class="Contact-add-text">Add contact</div>
+		<div class="Contact-add-icon icon-user-add"></div>
+	</div>
+	<div class="Contact-close icon-up-open"></div>
+</div>

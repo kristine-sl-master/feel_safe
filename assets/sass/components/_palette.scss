@@ -1,0 +1,73 @@
+.Palette 
+{
+	display: flex;
+	flex-wrap: wrap; 
+	width: 200px; 
+	position: absolute; 
+	bottom: 10px; 
+	left: 10px; 
+	z-index: 999;
+
+	.Color
+	{
+		width: 33%; 
+		height: 50px; 
+		background: black;
+
+		// Main 
+		&--main--light {
+			background: map-get( $colors, 'main-light' ); 
+		}
+		&--main {	
+			background: map-get( $colors, 'main' ); 
+		}
+		&--main--dark {
+			background: map-get( $colors, 'main-dark' ); 
+		}
+
+		// Foreground 
+		&--foreground--light {
+			background: map-get( $colors, 'foreground-light' ); 
+		}
+		&--foreground {	
+			background: map-get( $colors, 'foreground' ); 
+		}
+		&--foreground--dark {
+			background: map-get( $colors, 'foreground-dark' ); 
+		}
+
+		// Background 
+		&--background--light {
+			background: map-get( $colors, 'background-light' ); 
+		}
+		&--background {	
+			background: map-get( $colors, 'background' ); 
+		}
+		&--background--dark {
+			background: map-get( $colors, 'background-dark' ); 
+		}
+
+		// Highlight 
+		&--highlight--light {
+			background: map-get( $colors, 'highlight-light' ); 
+		}
+		&--highlight {	
+			background: map-get( $colors, 'highlight' ); 
+		}
+		&--highlight--dark {
+			background: map-get( $colors, 'highlight-dark' ); 
+		}
+
+		// Alarm 
+		&--alarm--light {
+			background: map-get( $colors, 'alarm-light' ); 
+		}
+		&--alarm {	
+			background: map-get( $colors, 'alarm' ); 
+		}
+		&--alarm--dark {
+			background: map-get( $colors, 'alarm-dark' ); 
+		}
+
+	}
+}

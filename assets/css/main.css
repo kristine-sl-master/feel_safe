@@ -1,0 +1,278 @@
+.Alarm {
+  height: 100%;
+  width: 100%;
+  background: #e74c3c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .Alarm-icon {
+    color: white;
+    font-size: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .Alarm-icon--1 {
+      margin-left: -57px; }
+  .Alarm-stop {
+    width: 250px;
+    height: 80px;
+    background: #c0392b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600; }
+    .Alarm-stop:hover {
+      background: #E68364; }
+    .Alarm-stop-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 6px;
+      margin-right: 10px; }
+      .Alarm-stop-icon .icon-volume-off {
+        font-size: 30px;
+        margin-right: -10px; }
+
+.Button {
+  font-weight: 600;
+  cursor: pointer;
+  width: 300px;
+  height: 60px;
+  background: #34495e;
+  color: #fafafa;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 20px; }
+  .Button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px; }
+  .Button-header {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 5px;
+    color: #2c3e50; }
+  .Button-description {
+    color: #54697e;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 20px; }
+  .Button--police {
+    display: flex;
+    align-items: center;
+    height: 100px; }
+    .Button--police--notify {
+      height: 100%;
+      width: 66.66667%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .Button--police--notify-icon {
+        margin-right: 10px;
+        padding-top: 10px;
+        font-size: 30px;
+        color: #d5d5d5; }
+    .Button--police--call {
+      width: 33.33333%;
+      height: 100%;
+      font-size: 30px;
+      background: #54697e;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .Button--police--call:hover, .Button--police--call:active {
+        color: #4edc91; }
+    .Button--police--notify:hover, .Button--police--notify:active, .Button--police--call:hover, .Button--police--call:active {
+      background: #2c3e50; }
+  .Button--contacts {
+    font-size: 30px;
+    display: flex;
+    align-items: center; }
+    .Button--contacts--message, .Button--contacts--call, .Button--contacts--location {
+      width: 33.33333%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 25px; }
+      .Button--contacts--message:hover, .Button--contacts--message:active, .Button--contacts--call:hover, .Button--contacts--call:active, .Button--contacts--location:hover, .Button--contacts--location:active {
+        background: #2c3e50; }
+    .Button--contacts--call, .Button--contacts--location {
+      background: #54697e; }
+  .Button--alarm {
+    width: 100%;
+    height: 130px;
+    background: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0; }
+    .Button--alarm-icon {
+      font-size: 60px;
+      padding-top: 20px;
+      padding-right: 20px; }
+    .Button--alarm-label {
+      font-weight: 800;
+      font-size: 30px; }
+    .Button--alarm-wrapper {
+      display: flex;
+      align-items: center; }
+
+.Contact {
+  padding: 15px;
+  display: flex;
+  border-bottom: 1px solid #d5d5d5; }
+  .Contact-wrapper {
+    background: #fafafa;
+    height: 220px;
+    overflow-y: scroll; }
+  .Contact-name {
+    width: 220px;
+    font-weight: 600; }
+  .Contact-phone {
+    width: 100px; }
+  .Contact-delete {
+    width: 20px; }
+  .Contact-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #F2F1EF;
+    width: 100%; }
+    .Contact-add-text {
+      margin-right: 20px; }
+    .Contact-add-icon {
+      font-size: 20px; }
+  .Contact-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 30px;
+    background: #d5d5d5;
+    width: 100%; }
+
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F2F1EF;
+  padding: 20px;
+  height: 100px;
+  border-bottom: 10px solid #d5d5d5; }
+
+.Icon--contacts, .Icon--settings {
+  font-size: 35px;
+  color: #34495e;
+  margin-bottom: -10px; }
+  .Icon--contacts:hover, .Icon--settings:hover {
+    color: #54697e; }
+
+.Icon--settings {
+  text-align: right; }
+
+.Icon--active {
+  color: #f1c40f; }
+  .Icon--active:hover {
+    color: #F4e04F; }
+
+.Logo {
+  font-family: 'Raleway';
+  font-size: 50px;
+  display: flex;
+  margin: 0 30px; }
+  .Logo--thin {
+    color: #34495e;
+    font-weight: 600; }
+  .Logo--thick {
+    color: #2ecc71;
+    font-weight: 700; }
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2c3e50;
+  position: absolute;
+  width: 100%; }
+
+.Palette {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 999; }
+  .Palette .Color {
+    width: 33%;
+    height: 50px;
+    background: black; }
+    .Palette .Color--main--light {
+      background: #4edc91; }
+    .Palette .Color--main {
+      background: #2ecc71; }
+    .Palette .Color--main--dark {
+      background: #27ae60; }
+    .Palette .Color--foreground--light {
+      background: #54697e; }
+    .Palette .Color--foreground {
+      background: #34495e; }
+    .Palette .Color--foreground--dark {
+      background: #2c3e50; }
+    .Palette .Color--background--light {
+      background: #fafafa; }
+    .Palette .Color--background {
+      background: #F2F1EF; }
+    .Palette .Color--background--dark {
+      background: #d5d5d5; }
+    .Palette .Color--highlight--light {
+      background: #F4e04F; }
+    .Palette .Color--highlight {
+      background: #f1c40f; }
+    .Palette .Color--highlight--dark {
+      background: #f39c12; }
+    .Palette .Color--alarm--light {
+      background: #E68364; }
+    .Palette .Color--alarm {
+      background: #e74c3c; }
+    .Palette .Color--alarm--dark {
+      background: #c0392b; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html, body {
+  height: 100%; }
+
+body {
+  background: #fafafa;
+  font-family: 'Open Sans'; }
+
+h1 {
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+[ng-view] {
+  height: calc( 100% - 100px); }
+
+h1 {
+  font-size: 22px;
+  color: #34495e; }

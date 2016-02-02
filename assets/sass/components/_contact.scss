@@ -1,0 +1,60 @@
+.Contact
+{
+	padding: 15px; 
+	display: flex;
+	border-bottom: 1px solid map-get( $colors, 'background-dark' );
+
+	&-wrapper
+	{
+		background: map-get( $colors, 'background-light' ); 
+		height: map-get( $layout, 'contacts-height'); 
+		overflow-y: scroll; 
+	}
+
+	&-name
+	{
+		width: 220px;
+		font-weight: 600; 
+	}
+
+	&-phone 
+	{
+		width: 100px; 
+	}
+
+	&-delete
+	{
+		width: 20px; 
+	}
+
+	&-add
+	{
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+		padding: 15px; 
+		background: map-get( $colors, 'background' ); 
+		width: 100%; 
+
+		&-text
+		{
+			margin-right: map-get( $layout, 'spacing' ); 
+		}
+
+		&-icon
+		{
+			font-size: 20px; 
+		}
+	}
+
+	&-close
+	{
+		display: flex; 
+		align-items: center; 
+		justify-content: center;
+		padding: 5px; 
+		font-size: 30px; 
+		background: map-get( $colors, 'background-dark' ); 
+		width: 100%; 
+	}
+}

@@ -1,0 +1,33 @@
+$constants: (
+    'golden-ratio': 0.618
+);
+
+$colors: (
+
+	'main': #2ecc71, 
+	'main-light': #4edc91, 
+	'main-dark': #27ae60, 
+
+	'foreground': #34495e, 
+	'foreground-light': #54697e, 
+	'foreground-dark': #2c3e50, 
+
+	'background': #F2F1EF, 
+	'background-light': #fafafa, 
+	'background-dark': #d5d5d5, 
+
+	'highlight': #f1c40f, 	
+	'highlight-light': #F4e04F, 
+	'highlight-dark': #f39c12,
+
+	'alarm': #e74c3c, 
+	'alarm-light': #E68364, 
+	'alarm-dark': #c0392b
+); 
+
+$layout: (
+
+	'spacing': 20px, 
+	'contacts-height': 220px, 
+	'header-height': 100px
+); 

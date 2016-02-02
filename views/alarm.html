@@ -1,0 +1,16 @@
+<div class="Alarm" ng-controller = 'AlarmCtrl as alarm'>
+	<audio autoplay loop>
+		<source src = '../assets/sounds/alarm.mp3' type = 'audio/mpeg'></source>
+	</audio>
+	<div class="Alarm-icon">
+		<div class="Alarm-icon--1 icon-volume-down" ng-show = 'alarm.activeIcon === 1'></div>
+		<div class="Alarm-icon--2 icon-volume-up" ng-show = 'alarm.activeIcon === 2'></div>
+	</div>
+	<a href = '#/' class="Alarm-stop">
+		<div class="Alarm-stop-icon">
+			<div class="icon-volume-off"></div>
+			<div class="icon-x"></div>
+		</div>
+		<div class="Alarm-stop-text">Silence alarm</div>
+	</a>
+</div>

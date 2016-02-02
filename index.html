@@ -1,0 +1,66 @@
+<!--
+
+   _____         _ ____         __      
+ |  ___|__  ___| / ___|  __ _ / _| ___ 
+ | |_ / _ \/ _ \ \___ \ / _` | |_ / _ \
+ |  _|  __/  __/ |___) | (_| |  _|  __/
+ |_|  \___|\___|_|____/ \__,_|_|  \___|                    
+========================================
+by Kristine Sundt Lorentzen
+Mobile Development 
+Westerdals Oslo ACT
+
+-->
+
+<!doctype html>
+<html lang = 'no' ng-app = 'app'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>FeelSafe</title>
+        <meta name = 'description' content = ''>
+        <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:600,700,800|Open+Sans:200,400,600,800' rel='stylesheet' type='text/css'>
+        <link href="https://file.myfontastic.com/87Sh3wZS2tUkxW3rrWJt2R/icons.css" rel="stylesheet">
+
+        <!-- STYLES -->
+        <link rel = 'stylesheet' href = 'https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css'> 
+        <link rel = 'stylesheet' href = 'assets/css/main.css'>
+
+    </head>
+    <body>
+        
+        <!-- NAVBAR -->
+        <div class="Header" ng-controller = "HeaderCtrl as header">
+            <div class="Icon Icon--contacts icon-users" ng-click = "header.toggleContacts()" ng-class = "{ 'Icon--active':header.contacts.active }"></div>
+            <div class="Logo">
+                <div class="Logo--thin">Feel</div>
+                <div class="Logo--thick">Safe</div>
+            </div>
+            <div class="Icon Icon--settings" data-icon="a"></div>
+        </div>
+
+        <!-- MENU ITEMS -->
+
+        <div ng-include = ' "views/menu/contacts.html" '></div>
+        <div ng-include = ' "views/menu/settings.html" '></div>
+        
+        <!-- ====================================== -->
+
+        <!-- CONTENT -->
+        <div ng-view ></div>
+
+        <!-- ====================================== -->
+        
+        <!-- COLOR PALETTE -->
+        <!-- <div ng-include = ' "views/_colorPalette.html" '></div> -->
+
+        <!-- JAVASCRIPT -->
+        <script src = '/node_modules/angular/angular.js'></script>
+        <script src = '/node_modules/angular-route/angular-route.js'></script>
+        <script src = '/node_modules/angular-animate/angular-animate.js'></script>
+        <script src = 'assets/js/dist/app.js'></script>
+
+    </body'
+</html>

@@ -1,0 +1,29 @@
+.Icon 
+{
+	&--contacts, &--settings 
+	{
+		font-size: 35px; 
+		color: map-get( $colors, 'foreground' );
+		margin-bottom: -10px; 
+
+		&:hover
+		{
+			color: map-get( $colors, 'foreground-light' ); 
+		}
+	}
+
+	&--settings 
+	{
+		text-align: right; 
+	}
+
+	&--active
+	{
+		color: map-get( $colors, 'highlight'); 
+
+		&:hover
+		{
+			color: map-get( $colors, 'highlight-light' ); 
+		}
+	}
+}

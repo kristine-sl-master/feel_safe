@@ -1,0 +1,35 @@
+html 
+{
+	box-sizing: border-box;
+}
+
+*, *:before, *:after 
+{
+	box-sizing: inherit;
+}
+
+html, body  
+{
+	height: 100%
+}
+
+body 
+{
+	background: map-get( $colors, 'background-light' ); 
+	font-family: 'Open Sans';
+}
+
+h1
+{
+	margin: 0; 
+}
+
+a 
+{
+	text-decoration: none;
+}
+
+[ng-view]
+{
+	height: calc( 100% - #{ map-get( $layout, 'header-height' ) } ); 
+}
