@@ -7,11 +7,7 @@ angular.module( 'app', [
 
 	$routeProvider
 
-		.when( '/', {
-			templateUrl: 'views/main.html'
-		} )
-
-		.when( '/alarm', {
-			templateUrl: 'views/alarm.html'
-		} );  
+		.when( '/', 		{ templateUrl: 'views/main.html' } )
+		.when( '/alarm', 	{ templateUrl: 'views/alarm.html' } )
+		.when( '/child', 	{ templateUrl: 'views/child.html' } );  
 } );

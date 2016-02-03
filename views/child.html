@@ -1,0 +1,7 @@
+<div class = "ChildAlarm" ng-controller = "ChildAlarmCtrl as childAlarm">
+	<a href = '#/alarm' class = "Button--childAlarm" ng-click = 'childAlarm.soundAlarm()'>
+		<div class = "icon-sound"></div>
+		<div class = "Button--childAlarm-label">ALARM</div>
+	</div>
+	<div class="ChildAlarm-alert" ng-show = 'childAlarm.alert.active'>{{ childAlarm.alert.description }}</div>
+</div>

@@ -21,7 +21,7 @@ The app has the following dependencies:
 Angular is used to make the site interactive, and to allow rapid implementation of new functionality. 
 
 I have also utilised the following third-party angular libraries: 
-> - **angular-route**
+> **angular-route**
 > Allows easy route-management, and enables the project to have one index.html file, which contains the navigation bar, common for all parts of the application, and have the rest of the view change dynamically. 
 
 ###Gulp
@@ -50,7 +50,7 @@ Gulp is used for rapid development, and makes it much easier to make very readab
 > Ensures that all angular files are annotated correctly with its dependencies, to ensure it has no provider issues, even when minimised.
 >  
 > **gulp-js-validate**
-> Validates the javascript.
+Validates the javascript.
 >  
 > **browsersync**
 > A dependency which enables synchronising a port on localhost (in my case, localhost:3000) which acts as a webserver for the files for testing. It also creates an external access point on the local IP-address, which allows testing on other devices than the one used to develop, including testing on mobile. It even synchronises the scroll and position of the screen on both screens, if you have them both up at the same time. 

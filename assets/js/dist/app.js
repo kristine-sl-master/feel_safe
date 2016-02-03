@@ -9,13 +9,9 @@ angular.module( 'app', [
 
 	$routeProvider
 
-		.when( '/', {
-			templateUrl: 'views/main.html'
-		} )
-
-		.when( '/alarm', {
-			templateUrl: 'views/alarm.html'
-		} );  
+		.when( '/', 		{ templateUrl: 'views/main.html' } )
+		.when( '/alarm', 	{ templateUrl: 'views/alarm.html' } )
+		.when( '/child', 	{ templateUrl: 'views/child.html' } );  
 }] );
 angular.module( 'controllers' )
 	.controller( 'AlarmCtrl', ["$interval", "$timeout", "$log", function( $interval, $timeout, $log ) {
@@ -31,6 +27,33 @@ angular.module( 'controllers' )
 			vm.activeIcon === 2 ? vm.activeIcon = 1 : vm.activeIcon++;
 
 		}, intervalTime ); 
+}] ); 
+angular.module( 'controllers' )
+	.controller( 'ChildAlarmCtrl', ["$interval", "$timeout", "$log", function( $interval, $timeout, $log ) {
+
+		var vm = this; 
+
+		vm.alert = {
+			active: false, 
+			description: ''
+		}
+
+		vm.soundAlarm = function() {
+
+			setAlert( 'The police and your parents have been notified and are on their way.' ); 
+		}
+
+		function setAlert( description ) {
+
+			vm.alert.active = true; 
+			vm.alert.description = description; 
+		}
+
+		function deactivateAlarm() {
+
+			vm.alert.active = false; 
+			vm.alert.description = ''; 
+		}
 }] ); 
 angular.module( 'controllers' )
 	.controller('ContactsCtrl', ["$scope", "menu", function( $scope, menu ) {
