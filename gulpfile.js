@@ -17,9 +17,13 @@ gulp.task( 'sass', function() {
 } );
 
 gulp.task( 'js', function() {
+
     return gulp.src( [
            'assets/js/app/modules/*.js',
-           'assets/js/app/**/*.js'
+           'assets/js/app/app.js',
+           'assets/js/app/services/**/*.js', 
+           'assets/js/app/controllers/**/*.js',
+           'assets/js/app/config.js'
         ] )
         .pipe( plumber() )
         .pipe( validateJs() )

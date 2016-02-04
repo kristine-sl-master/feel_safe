@@ -4,15 +4,68 @@ angular.module( 'app', [
 	'ngRoute', 
 	'controllers', 
 	'services'
-] )
-.config( ["$routeProvider", function( $routeProvider ) {
+] ); 
+angular.module( 'services' )
+	.factory( 'menu', ["$rootScope", function( $rootScope ) {
 
-	$routeProvider
+	var none = 0; 
+	var contacts = 1; 
+	var settings = 2;
 
-		.when( '/', 		{ templateUrl: 'views/main.html' } )
-		.when( '/alarm', 	{ templateUrl: 'views/alarm.html' } )
-		.when( '/child', 	{ templateUrl: 'views/child.html' } );  
-}] );
+	var active = none;
+
+	var change = "menu-changed"; 
+
+	var changeMenu = function( currentActive ) {
+
+		active = currentActive;
+		$rootScope.$broadcast( change ); 
+	}
+
+	var getActiveMenu = function() {
+
+		return active; 
+	}
+
+	return {
+
+		none: none, 
+		contacts: contacts, 
+		settings: settings,
+		change: change,
+		changeMenu: changeMenu, 
+		getActiveMenu: getActiveMenu
+	}
+
+}]); 
+angular.module( 'services' )
+	.factory( 'user', function() {
+
+		var types = {
+			adult: 0, 
+			child: 1
+		}
+
+		var user = {
+			type: adult
+		};  
+
+		var setUserType = function( type ) {
+
+			user.type = type; 
+		}
+
+		var getUserType = function() {
+
+			return user.type; 
+		}
+
+		return {
+			setUser: setUser, 
+			getUser: getUser, 
+			types: types
+		}
+} );
 angular.module( 'controllers' )
 	.controller( 'AlarmCtrl', ["$interval", "$timeout", "$log", function( $interval, $timeout, $log ) {
 
@@ -117,36 +170,19 @@ angular.module( 'controllers' )
 		vm.contacts.active = menu.getActiveMenu() === menu.contacts; 
 	})
 }]); 
-angular.module( 'services' )
-	.factory( 'menu', ["$rootScope", function( $rootScope ) {
+angular.module( 'app' )
+	.config( ["$routeProvider", "user", function( $routeProvider, user ) { // WHY DOESN'T THIS WORK?! 
 
-	var none = 0; 
-	var contacts = 1; 
-	var settings = 2;
+		var home = user.getType() === user.types.child ? 'views/child.html' : 'views/main.html'; 
 
-	var active = none;
+		$routeProvider
 
-	var change = "menu-changed"; 
+			.when( '/', 		{ templateUrl: home } )
+			.when( '/alarm', 	{ templateUrl: 'views/alarm.html'} );
 
-	var changeMenu = function( currentActive ) {
+		// $routeProvider
 
-		active = currentActive;
-		$rootScope.$broadcast( change ); 
-	}
-
-	var getActiveMenu = function() {
-
-		return active; 
-	}
-
-	return {
-
-		none: none, 
-		contacts: contacts, 
-		settings: settings,
-		change: change,
-		changeMenu: changeMenu, 
-		getActiveMenu: getActiveMenu
-	}
-
-}]); 
+		// 	.when( '/', 		{ templateUrl: 'views/main.html' } )
+		// 	.when( '/alarm', 	{ templateUrl: 'views/alarm.html'} )
+		// 	.when( '/child', 	{ templateUrl: 'views/child.html' } );  
+}] );
