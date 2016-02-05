@@ -7,7 +7,7 @@ angular.module( 'services' )
 		}
 
 		var user = {
-			type: adult
+			type: types.child
 		};  
 
 		var setUserType = function( type ) {
@@ -21,8 +21,8 @@ angular.module( 'services' )
 		}
 
 		return {
-			setUser: setUser, 
-			getUser: getUser, 
+			setUser: setUserType, 
+			getUser: getUserType, 
 			types: types
 		}
 } );

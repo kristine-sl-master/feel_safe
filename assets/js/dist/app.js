@@ -2,42 +2,42 @@ angular.module( 'controllers', [] );
 angular.module( 'services', [] );
 angular.module( 'app', [
 	'ngRoute', 
-	'controllers', 
-	'services'
+	'services', 
+	'controllers'
 ] ); 
 angular.module( 'services' )
 	.factory( 'menu', ["$rootScope", function( $rootScope ) {
 
-	var none = 0; 
-	var contacts = 1; 
-	var settings = 2;
+		var none = 0; 
+		var contacts = 1; 
+		var settings = 2;
 
-	var active = none;
+		var active = none;
 
-	var change = "menu-changed"; 
+		var change = "menu-changed"; 
 
-	var changeMenu = function( currentActive ) {
+		var changeMenu = function( currentActive ) {
 
-		active = currentActive;
-		$rootScope.$broadcast( change ); 
-	}
+			active = currentActive;
+			$rootScope.$broadcast( change ); 
+		}
 
-	var getActiveMenu = function() {
+		var getActiveMenu = function() {
 
-		return active; 
-	}
+			return active; 
+		}
 
-	return {
+		return {
 
-		none: none, 
-		contacts: contacts, 
-		settings: settings,
-		change: change,
-		changeMenu: changeMenu, 
-		getActiveMenu: getActiveMenu
-	}
-
-}]); 
+			none: none, 
+			contacts: contacts, 
+			settings: settings,
+			change: change,
+			changeMenu: changeMenu, 
+			getActiveMenu: getActiveMenu
+		}
+	}]
+); 
 angular.module( 'services' )
 	.factory( 'user', function() {
 
@@ -47,7 +47,7 @@ angular.module( 'services' )
 		}
 
 		var user = {
-			type: adult
+			type: types.child
 		};  
 
 		var setUserType = function( type ) {
@@ -61,8 +61,8 @@ angular.module( 'services' )
 		}
 
 		return {
-			setUser: setUser, 
-			getUser: getUser, 
+			setUser: setUserType, 
+			getUser: getUserType, 
 			types: types
 		}
 } );
@@ -148,11 +148,15 @@ angular.module( 'controllers' )
 	];
 }]);
 angular.module( 'controllers' )
-	.controller('HeaderCtrl', ["$log", "$scope", "menu", function( $log, $scope, menu ) {
+	.controller('HeaderCtrl', ["$log", "$scope", "menu", "$rootScope", function( $log, $scope, menu, $rootScope ) {
 
 	var vm = this;
 
 	vm.contacts = {
+		active: false
+	}
+
+	vm.settings = {
 		active: false
 	}
 
@@ -163,21 +167,31 @@ angular.module( 'controllers' )
 		menu.changeMenu( active ); 
 
 		vm.contacts.active = menu.getActiveMenu() === menu.contacts; 
+		vm.settings.active = false;
+	}
+
+	vm.toggleSettings = function() {
+
+		var active = menu.getActiveMenu() === menu.settings ? menu.none : menu.settings; 
+
+		menu.changeMenu( active ); 
+
+		vm.settings.active = menu.getActiveMenu() === menu.settings; 
+		vm.contacts.active = false;
 	}
 
 	$scope.$on( menu.change, function( event, args ) {
 
 		vm.contacts.active = menu.getActiveMenu() === menu.contacts; 
+		$rootScope.showSettings = menu.getActiveMenu() === menu.settings;
 	})
 }]); 
 angular.module( 'app' )
-	.config( ["$routeProvider", "user", function( $routeProvider, user ) { // WHY DOESN'T THIS WORK?! 
-
-		var home = user.getType() === user.types.child ? 'views/child.html' : 'views/main.html'; 
+	.config( ["$routeProvider", function( $routeProvider ) { // WHY DOESN'T THIS WORK?! 
 
 		$routeProvider
 
-			.when( '/', 		{ templateUrl: home } )
+			.when( '/', 		{ templateUrl: 'views/main.html' } )
 			.when( '/alarm', 	{ templateUrl: 'views/alarm.html'} );
 
 		// $routeProvider
@@ -185,4 +199,16 @@ angular.module( 'app' )
 		// 	.when( '/', 		{ templateUrl: 'views/main.html' } )
 		// 	.when( '/alarm', 	{ templateUrl: 'views/alarm.html'} )
 		// 	.when( '/child', 	{ templateUrl: 'views/child.html' } );  
-}] );
+	}] ).run( ["$rootScope", "user", function( $rootScope, user ) {
+		$rootScope.isChild = user.getUser() === user.types.child;
+		$rootScope.setChildMode = function() {
+			$rootScope.isChild = true;
+			user.setUser( user.types.child );
+			return false;
+		}
+		$rootScope.setAdultMode = function() {
+			$rootScope.isChild = false;
+			user.setUser( user.types.adult );
+			return false;
+		}
+	}] );

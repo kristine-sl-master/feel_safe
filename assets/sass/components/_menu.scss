@@ -3,8 +3,22 @@
 	display: flex; 
 	flex-direction: column; 
 	align-items: center;
+	background: map-get( $colors, 'background-light' );
 	color: map-get( $colors, 'foreground-dark' );
 	height: map-get( $layout, 'menu-max-height' );
 	position: absolute; 
 	width: 100%; 
+
+	&--userSwitch
+	{
+		color: map-get( $colors, 'main-dark' ); 
+		font-size: 25px; 
+		margin: 20px; 
+		cursor: pointer;
+
+		&:hover
+		{
+			font-weight: 600;  
+		}
+	}
 }
